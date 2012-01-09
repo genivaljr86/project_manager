@@ -4,7 +4,7 @@
 en:
   hello: "Hello world"
   new: Criar %{model}
-  error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
+  error_message_header: "%{count} erro(s) impediram este(a) %{model} de ser gravado:"
   delete: "Você tem certeza que deseja deletar esse registro"
   project_not_found: "O projeto que você procura não pode ser encontrado"
 

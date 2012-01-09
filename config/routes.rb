@@ -1,5 +1,7 @@
 ProjectManager::Application.routes.draw do
-  resources :projects
+  resources :projects do
+    resources :tasks
+  end
 
   root to: "projects#index"
 
