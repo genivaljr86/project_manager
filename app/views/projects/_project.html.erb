@@ -2,5 +2,5 @@
   <%= project.title %>
   <%= link_to_icon "ver", project %>
   <%= link_to_icon "editar", edit_project_path(project) %>
-  <%= link_to_icon "deletar", "#" %>
+  <%= link_to_icon "deletar", project, :method => :delete, :confirm => t('delete') %>
 </h1>

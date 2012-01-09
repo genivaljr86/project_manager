@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def link_to_destroy(url, html_options = {})
-    html_options.reverse_merge!(:confirm => 'Are you sure?', :method => :delete, :class => "red")
+    html_options.reverse_merge!(:confirm => t('delete') , :method => :delete, :class => "red")
     link_to t("destroy"), url, html_options
   end
 

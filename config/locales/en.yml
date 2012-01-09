@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  new: Criar %{model}
+  error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
+  delete: "Você tem certeza que deseja deletar esse registro"
+
