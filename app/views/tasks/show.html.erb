@@ -6,6 +6,7 @@
 <div class="task">
   <h2>
     <%= @task.title %>
+    <%= link_to_icon "deletar", [@project, @task], :method => :delete, :confirm => t('delete') %>
     <%= link_to_icon "editar", [:edit, @project, @task] %>
   </h2>
     <%= simple_format(@task.description) %>

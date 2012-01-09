@@ -33,6 +33,9 @@ class TasksController < ApplicationController
 
 
   def destroy
+    @task.destroy
+    flash[:notice] = t("destroy_sucess")
+    redirect_to @project
   end
 
 
