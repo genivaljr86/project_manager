@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
-  has_many :tasks
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  has_many :tasks, :dependent => :destroy
 
   validates_presence_of :title
 end

@@ -5,12 +5,23 @@
     <%= link_to_icon "editar", edit_project_path(@project) %>
     <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
   </h1>
+  <% @project.tasks.each do |task| %>
+    <div class="task <%= dom_class_first(task, task.project.tasks) %> <%= cycle('odd', 'even') %>">
+      <div class="person-name"><%= @project.title %></div>
+      <div class="task-title">#<%= task.id %> - <%= task.title %></div>
+      <div class="time" datetime="<%= task.updated_at %>"><%= task.updated_at.to_formatted_s(:short) %></div>
+      <%= link_to_icon 'visualizar', [@project, task] %>
+      <%= link_to_icon 'editar', "#" %>
+      <%= link_to_icon 'deletar', "#" %>
+    </div>
+  <% end %>
+
   <ul id='tickets'>
     <% @project.tasks.each do |task| %>
       <li>
         #<%= task.id %> - <%= link_to task.title, [@project, task] %>
     </li>
   <% end %>
-  </ul>
+</ul>
 </div>
 

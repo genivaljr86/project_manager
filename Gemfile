@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'pry'
 gem 'awesome_print'
+gem 'friendly_id', '~> 4.0.0'
 
 
 group :assets do

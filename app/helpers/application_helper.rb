@@ -27,4 +27,11 @@ module ApplicationHelper
       content_tag(:div, msg, :id => "flash_#{name}")
     end.join.html_safe
   end
+
+  def dom_class_first(object, array)
+    if (object == array.first)
+      return "first"
+    end
+    nil
+  end
 end
