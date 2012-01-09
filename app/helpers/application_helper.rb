@@ -1,4 +1,14 @@
 module ApplicationHelper
+  def avatar_url(user, size)
+    if user.avatar_url.present?
+      user.avatar_url
+    else
+      default_url = "#{root_url}assets/avatars/default_small.png"
+      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
+    end
+  end
+
   def link_to_icon(icon_name, url_or_object, options={})
     options.merge!({ :class => "icon #{icon_name}", :id => "#{icon_name}" })
     link_to(image_tag("projects_icons/#{icon_name}.png", { :title => icon_name }), url_or_object, options)

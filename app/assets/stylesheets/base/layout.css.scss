@@ -102,7 +102,26 @@ h1 {
 }
 /*---------------------------------------------------------------------------------*/
 
+.logo a{
+  float: left;
+  font-size: 38px;
+  font-weight: bold;
+  border-bottom: 1px transparent;
+  text-decoration:none;
+}
+.header_wrapper {
+  width: 75%;
+  margin: 0 auto;
+  overflow:hidden;
+  padding:20px 0;
+}
 
+#login_user_status {
+  float:right;
+  color: #555;
+}
+
+/*---------------------------------------------------------------------------------*/
 
 .clear {
   clear: both;
@@ -120,22 +139,60 @@ h1 {
 }
 
 #flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
+  padding: 15px 35px;
   margin: 10px 0;
+  font: 14px Verdana, Arial, Verdana, sans-serif;
 }
 
 #flash_notice {
-  background-color: #CFC;
+  color: #264409;
+  background-color: #e6efc2;
   border: solid 1px #6C6;
+  background: #e6efc2 url(/assets/notice.png) no-repeat 10px 15px;
 }
 
-#flash_error, #flash_alert {
-  background-color: #FCC;
+#flash_error{
+
+  background: #fff6bf url(/assets/error.png) no-repeat 10px 15px;
+  color: #8a1f11;
+  background-color: #fbe3e4;
   border: solid 1px #C66;
+}
+
+#flash_alert{
+  color: #514721;
+  background: #fff6bf url(/assets/alert.png) no-repeat 10px 15px;
+  border: 1px solid #ffd324;
 }
 
 .fieldWithErrors {
   display: inline;
+}
+#error_explanation{
+  background-color: #FCC;
+  border: solid 1px #C66;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  margin: 8px 10px;
+}
+
+#error_explanation ul {
+  margin: 10px;
 }
 
 .error_messages {

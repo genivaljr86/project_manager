@@ -1,0 +1,19 @@
+form  .input-custom {width: 250px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
+
+
+form  .input-p {width: 70px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
+form  .input-m { width: 150px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
+form  .input-g {width: 350px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
+form  .input-gg{width: 450px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
+form  .hint 	{clear: left;margin-left: 120px;font-size:12px;color: #555;display: block;font-style: italic;}
+
+input[type=checkbox] {width: 15px;height: 15px;display: inline;	}
+input[type=hidden] {display: none;}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="button"] {border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+input[type="submit"], textarea  {height: 25px;background: #ccc; border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px; width:10%; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+input[type="button"] {width: 70px;}
+textarea {width: 80%}
+input[type="submit"]:hover,input[type="button"]:hover {background: #FFF;cursor:pointer;}
+.combo {width: 300px;border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px;width:10%; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; height: 24px; background-color: #FFF;}
+.cke_contents {width: 500px !important}

@@ -8,6 +8,21 @@
     <%= yield(:head) %>
   </head>
   <body>
+    <div class="header_wrapper">
+      <div class="logo">
+        <%= link_to "Project Manager", root_url %>
+      </div>
+      <div id="login_user_status">
+        <% if user_signed_in? %>
+          <%= image_tag avatar_url(current_user, 25) %>
+          <%= current_user.name  %>|
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <em>Not Signed in.</em>
+          <%= link_to 'Sign in', new_user_session_path%> or <%= link_to 'Sign up', new_user_registration_path%>
+        <% end %>
+      </div>
+    </div>
     <div id="container">
       <%= flash_messages %>
       <% content_tag :h1, yield(:title) if show_title? %>
