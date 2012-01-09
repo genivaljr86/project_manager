@@ -3,7 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'devise'
-
+gem 'pry'
+gem 'awesome_print'
 
 
 group :assets do

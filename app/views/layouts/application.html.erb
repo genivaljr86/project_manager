@@ -10,7 +10,7 @@
   <body>
     <div id="container">
       <%= flash_messages %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
+      <% content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
   </body>
