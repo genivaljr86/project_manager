@@ -1,0 +1,10 @@
+<%= form_for(@project) do |f| %>
+  <%= error_messages_for @project %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, size: 60 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
