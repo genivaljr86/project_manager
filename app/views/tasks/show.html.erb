@@ -3,3 +3,10 @@
   <%= simple_format(@task.description) %>
 </div>
 
+<div class="task">
+  <h2>
+    <%= @task.title %>
+    <%= link_to_icon "editar", [:edit, @project, @task] %>
+  </h2>
+    <%= simple_format(@task.description) %>
+</div>

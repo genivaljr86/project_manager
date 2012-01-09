@@ -22,6 +22,16 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    if @task.update_attributes(params[:task])
+      flash[:notice] = t("update_sucess")
+      redirect_to [@project, @task]
+    else
+      render :action => "edit"
+    end
+  end
+
+
   def destroy
   end
 
