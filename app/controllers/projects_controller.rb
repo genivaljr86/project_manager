@@ -15,9 +15,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-    @project.save
-    flash[:notice] = t("create_sucess")
-    redirect_to @project
+    if @project.save
+      flash[:notice] = t("create_sucess")
+      redirect_to @project
+    else
+      render :action => "new"
+    end
   end
 
   def update
