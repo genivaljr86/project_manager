@@ -1,3 +1,16 @@
 <% title @project.title %>
-<h2><%= @project.title %></h2>
+<div class="project">
+  <h1>
+    <%= @project.title %>
+    <%= link_to_icon "editar", edit_project_path(@project) %>
+    <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
+  </h1>
+  <ul id='tickets'>
+    <% @project.tasks.each do |task| %>
+      <li>
+        #<%= task.id %> - <%= link_to task.title, [@project, task] %>
+    </li>
+  <% end %>
+  </ul>
+</div>
 
