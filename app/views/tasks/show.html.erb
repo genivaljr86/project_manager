@@ -9,5 +9,10 @@
     <%= link_to_icon "deletar", [@project, @task], :method => :delete, :confirm => t('delete') %>
     <%= link_to_icon "editar", [:edit, @project, @task] %>
   </h2>
+  <div class="description">
     <%= simple_format(@task.description) %>
+    <div class="user-name">
+      <small>Criado pelo usuário <%= @task.user.name %></small>
+    </div>
+  </div>
 </div>

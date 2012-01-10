@@ -36,6 +36,18 @@ h1 {
   background-color: #373737;
 }
 
+.description{
+  background-color: #373737;
+  color: #999;
+  padding: 20px;
+}
+.user-name{
+  font-weight: bold;
+  display: block;
+  padding: 6px 0 4px 6px;
+  color: #ccc;
+
+}
 .project .task {
   position: relative;
   border-bottom: 1px solid #666;

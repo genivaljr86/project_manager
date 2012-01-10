@@ -13,7 +13,7 @@ input[type=hidden] {display: none;}
 input[type="text"], input[type="email"], input[type="password"], input[type="button"] {border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
 input[type="submit"], textarea  {height: 25px;background: #ccc; border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px; width:10%; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
 input[type="button"] {width: 70px;}
-textarea {width: 80%}
+textarea {width: 390px; height: 100px }
 input[type="submit"]:hover,input[type="button"]:hover {background: #FFF;cursor:pointer;}
 .combo {width: 300px;border:1px solid #CECFD0; color:#777777; margin:5px 5px 1px 0; padding:3px;width:10%; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; height: 24px; background-color: #FFF;}
 .cke_contents {width: 500px !important}

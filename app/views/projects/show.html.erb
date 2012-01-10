@@ -7,7 +7,7 @@
   </h1>
   <% @project.tasks.each do |task| %>
     <div class="task <%= dom_class_first(task, task.project.tasks) %> <%= cycle('odd', 'even') %>">
-      <div class="person-name"><%= @project.title %></div>
+      <div class="person-name"><%= task.user.name %></div>
       <div class="task-title">#<%= task.id %> - <%= task.title %></div>
       <div class="time" datetime="<%= task.updated_at %>"><%= task.updated_at.to_formatted_s(:short) %></div>
       <%= link_to_icon 'visualizar', [@project, task] %>
