@@ -19,8 +19,10 @@
 <div class="project">
   <h1>
     <%= @project.title %>
-    <%= link_to_icon "editar", edit_project_path(@project) %>
-    <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
+    <%= admins_only do %>
+      <%= link_to_icon "editar", edit_project_path(@project) %>
+      <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
+    <% end %>
   </h1>
   <% @project.tasks.each do |task| %>
     <div class="task <%= dom_class_first(task, task.project.tasks) %> <%= cycle('odd', 'even') %>">
@@ -28,8 +30,8 @@
       <div class="task-title">#<%= task.id %> - <%= task.title %></div>
       <div class="time" datetime="<%= task.updated_at %>"><%= task.updated_at.to_formatted_s(:short) %></div>
       <%= link_to_icon 'visualizar', [@project, task] %>
-      <%= link_to_icon 'editar', "#" %>
-      <%= link_to_icon 'deletar', "#" %>
+      <%= link_to_icon 'editar', [:edit, @project, task] %>
+      <%= link_to_icon 'deletar', [@project, task], :method => :delete, :confirm => t('delete') %>
     </div>
   <% end %>
 </div>

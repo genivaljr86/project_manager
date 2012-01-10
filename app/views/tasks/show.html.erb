@@ -1,3 +1,8 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+   <li><%= link_to @project.title, @project %> <span class="divider">/</span></li>
+  <li class="active"><%= @task.title %></li>
+<% end %>
 <div class="task">
   <h2>
     <%= @task.title %>

@@ -2,6 +2,10 @@
 <% content_for :breadcrumb do %>
   <li class="active">Home</li>
 <% end %>
+
 <%= render @projects %>
-<%= link_to_icon "novo", new_project_path %>
+
+<%= admins_only do %>
+  <%= link_to_icon "novo", new_project_path %>
+<% end %>
 

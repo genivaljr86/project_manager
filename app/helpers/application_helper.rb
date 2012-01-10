@@ -14,20 +14,6 @@ module ApplicationHelper
     link_to(image_tag("projects_icons/#{icon_name}.png", { :title => icon_name }), url_or_object, options)
   end
 
-  def link_to_new(model, url, html_options = {})
-    link_to t("new", model: model.model_name.human),url, html_options
-  end
-
-  def link_to_edit(url, html_options = {})
-    html_options.reverse_merge!(:class => "green")
-    link_to t("edit"), url, html_options
-  end
-
-  def link_to_destroy(url, html_options = {})
-    html_options.reverse_merge!(:confirm => t('delete') , :method => :delete, :class => "red")
-    link_to t("destroy"), url, html_options
-  end
-
   def error_messages_for(resource)
     render :partial => "shared/error_messages",:locals => { :resource => resource}
   end
@@ -42,6 +28,11 @@ module ApplicationHelper
     if (object == array.first)
       return "first"
     end
+    nil
+  end
+
+  def admins_only(&block)
+    block.call if current_user.try(:admin?)
     nil
   end
 end

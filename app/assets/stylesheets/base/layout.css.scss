@@ -31,6 +31,9 @@ h1 {
   font-size: 32px;
   padding-left: 6px;
 }
+h2{
+  color: #CCC;
+}
 /*---------------------------------------------------------------------------------*/
 .odd {
   background-color: #373737;
@@ -207,9 +210,8 @@ p.addlink {
 #container {
   width: 75%;
   margin: 0 auto;
-  background-color: #666;
+  background-color: #000;
   padding: 20px 40px;
-  border: solid 1px #FFF;
   margin-top: 20px;
 }
 
