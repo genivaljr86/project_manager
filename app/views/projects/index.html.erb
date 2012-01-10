@@ -1,4 +1,7 @@
 <% title t('.title') %>
+<% content_for :breadcrumb do %>
+  <li class="active">Home</li>
+<% end %>
 <%= render @projects %>
 <%= link_to_icon "novo", new_project_path %>
 

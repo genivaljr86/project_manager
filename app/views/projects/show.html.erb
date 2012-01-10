@@ -1,4 +1,21 @@
 <% title @project.title %>
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active"><%= @project.title %></li>
+<% end %>
+<div class="search">
+  <%= form_tag projects_path, :method => :get do %>
+    <%= text_field_tag :search, "",
+      :placeholder => "Procurar",
+      :size => 30,
+      :type => "search",
+      :class => "search-field" %>
+    <%= image_tag("projects_icons/procurar.png", class: "search_icon") %>
+  <% end %>
+  <p class="addlink">
+    <%= link_to "Nova Tarefa", new_project_task_path(@project) %>
+  </p>
+</div>
 <div class="project">
   <h1>
     <%= @project.title %>
@@ -15,13 +32,5 @@
       <%= link_to_icon 'deletar', "#" %>
     </div>
   <% end %>
-
-  <ul id='tickets'>
-    <% @project.tasks.each do |task| %>
-      <li>
-        #<%= task.id %> - <%= link_to task.title, [@project, task] %>
-    </li>
-  <% end %>
-</ul>
 </div>
 

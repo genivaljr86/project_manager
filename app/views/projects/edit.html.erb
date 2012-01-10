@@ -1,3 +1,8 @@
 <% title t('.title') %>
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li><%= link_to @project.title, 'javascript:history.go(-1);'  %> <span class="divider">/</span></li>
+  <li class="active">Editar</li>
+<% end %>
 <%= render "form" %>
 

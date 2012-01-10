@@ -1,5 +1,5 @@
 body {
-  background-color: #333;
+  background-color: #000;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -27,13 +27,16 @@ a.icon img {
   border: none;
 }
 h1 {
-  color: #ffc;
+  color: #b5e50d;
   font-size: 32px;
   padding-left: 6px;
 }
 /*---------------------------------------------------------------------------------*/
 .odd {
   background-color: #373737;
+}
+p.addlink {
+  text-align: right;
 }
 
 .description{
@@ -130,11 +133,71 @@ h1 {
 
 #login_user_status {
   float:right;
-  color: #555;
+  color: #FFF;
+}
+
+.search{
+  float: right;
+}
+.search_icon{
+  float: right;
+  margin-top: -21px;
+
 }
 
 /*---------------------------------------------------------------------------------*/
+#menu {
+  list-style: none;
+  width: 75%;
+  height: 35px;
+  margin: 0 auto;
+  padding: 2px 40px;
+}
 
+#menu li {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#menu li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: solid black 1px;
+  color: #FFF;
+  background-color: #666;
+  opacity: 2.4;
+}
+
+#menu li a:hover {
+  color: black;
+  background-color: #FFF;
+  opacity: 0.8;
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 15px 14px;
+  margin-bottom: 25px;
+}
+
+.submenu li{
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.divider{
+  padding: 0 5px;
+  color: #ccc;
+}
+.active{
+  color: #fff;
+}
+
+/*---------------------------------------------------------------------------------*/
 .clear {
   clear: both;
   height: 0;
@@ -144,7 +207,7 @@ h1 {
 #container {
   width: 75%;
   margin: 0 auto;
-  background-color: #333;
+  background-color: #666;
   padding: 20px 40px;
   border: solid 1px #FFF;
   margin-top: 20px;

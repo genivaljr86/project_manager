@@ -10,7 +10,7 @@
   <body>
     <div class="header_wrapper">
       <div class="logo">
-        <%= link_to "Project Manager", root_url %>
+        <%= link_to image_tag("logo_header.png"), root_url %>
       </div>
       <div id="login_user_status">
         <% if user_signed_in? %>
@@ -23,7 +23,16 @@
         <% end %>
       </div>
     </div>
+    <ul id="menu">
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "HOME", root_path %></li>
+    </ul>
     <div id="container">
+      <ul class="submenu">
+        <%= yield :breadcrumb %>
+      </ul>
       <%= flash_messages %>
       <% content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
