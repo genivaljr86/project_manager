@@ -7,4 +7,10 @@ en:
   error_message_header: "%{count} erro(s) impediram este(a) %{model} de ser gravado:"
   delete: "Você tem certeza que deseja deletar esse registro"
   project_not_found: "O projeto que você procura não pode ser encontrado"
+  users: "Usuários"
+  tasks_count: "Números de Tarefas"
+
+  projects:
+    index:
+      title: "Home"
 

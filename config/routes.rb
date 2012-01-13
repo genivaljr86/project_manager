@@ -1,8 +1,11 @@
 ProjectManager::Application.routes.draw do
-  get "users/index"
 
   devise_for :users
 
+  namespace :admin do
+    root :to => "base#index"
+    resources :users
+  end
 
   resources :projects do
     resources :tasks

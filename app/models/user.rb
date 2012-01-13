@@ -8,11 +8,16 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
   validates_presence_of :first_name, :last_name
+  has_many :tasks
 
   before_save :cleanup
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def member_since
+    created_at.strftime("%b %e, %Y")
   end
 
   private

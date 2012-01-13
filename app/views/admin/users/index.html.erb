@@ -1,2 +1,14 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/users/index.html.erb</p>
+<div class="users">
+  <%= content_tag :h1 do %>
+    <%= image_tag("projects_icons/usuarios.png",{ :title => "Usuarios" }) %>
+    <%= t('users') %>
+  <% end %>
+  <% @users.each do |user| %>
+    <div class="task <%= cycle('odd', 'even') %>">
+      <div class="person-name"><%= image_tag avatar_url(user, 25, "small") %> - <%= user.name %></div>
+      <div class="task-title"><%= t("tasks_count") %> - <%= user.tasks.count %></div>
+      <div class="time" datetime="<%= user.created_at %>">Membro desde: <%= user.member_since %></div>
+      <%= link_to_icon 'visualizar', [:admin, user] %>
+    </div>
+  <% end %>
+</div>

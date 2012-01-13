@@ -1,0 +1,22 @@
+<div id="profile">
+  <%= image_tag avatar_url(@user, 100, "big"), class: "avatar" %>
+  <h1><%= @user.name %></h1>
+  <dl>
+    <dt>Name:</dt>
+    <dd><%= @user.name %></dd>
+    <dt>Email:</dt>
+    <dd><%= @user.email %></dd>
+    <dt>Member Since:</dt>
+    <dd><%= @user.member_since %></dd>
+    <dt>current_sign_in_at</dt>
+    <dd><%= @user.current_sign_in_at %></dd>
+    <dt>last_sign_in_at</dt>
+    <dd><%= @user.last_sign_in_at %></dd>
+    <dt>last_sign_in_ip</dt>
+    <dd><%= @user.last_sign_in_ip %></dd>
+    <dt>current_sign_in_ip</dt>
+    <dd><%= @user.current_sign_in_ip %></dd>
+    <dt>sign_in_count</dt>
+    <dd><%= @user.sign_in_count %></dd>
+  </dl>
+</div>

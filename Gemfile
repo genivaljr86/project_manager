@@ -6,6 +6,8 @@ gem 'devise'
 gem 'pry'
 gem 'awesome_print'
 gem 'friendly_id', '~> 4.0.0'
+gem 'redcarpet'
+gem 'draper'
 
 
 group :assets do

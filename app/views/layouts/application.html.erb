@@ -14,7 +14,7 @@
       </div>
       <div id="login_user_status">
         <% if user_signed_in? %>
-          <%= image_tag avatar_url(current_user, 25) %>
+          <%= image_tag avatar_url(current_user, 25, "small") %>
           <%= current_user.name  %>|
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
