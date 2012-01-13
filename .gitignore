@@ -16,5 +16,5 @@
 
 # Ignore files GVIM
 *.swp
-
+*.swo
 #
