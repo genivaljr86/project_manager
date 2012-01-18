@@ -128,10 +128,12 @@ p.addlink {
   text-decoration:none;
 }
 .header_wrapper {
+  position: relative;
+  padding: 20px 40px;
   width: 75%;
   margin: 0 auto;
   overflow:hidden;
-  padding:20px 0;
+
 }
 
 #login_user_status {
@@ -151,10 +153,10 @@ p.addlink {
 /*---------------------------------------------------------------------------------*/
 #menu {
   list-style: none;
-  width: 75%;
-  height: 35px;
-  margin: 0 auto;
-  padding: 2px 40px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  height: 55px;
 }
 
 #menu li {
@@ -213,6 +215,13 @@ p.addlink {
   background-color: #000;
   padding: 20px 40px;
   margin-top: 20px;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+
+  -webkit-box-shadow: #A5A5A5 0 0 5px;
+  -moz-box-shadow: #A5A5A5 0 0 5px;
+  box-shadow: #A5A5A5 0 0 5px;
 }
 
 #flash_notice, #flash_error, #flash_alert {

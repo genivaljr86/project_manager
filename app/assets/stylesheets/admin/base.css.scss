@@ -1,3 +1,16 @@
 // Place all the styles related to the admin/base controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#admin_home{
+  color: #FFF;
+  border: solid 1px #FFF;
+}
+
+#admin_home h1{
+  color: #FFF;
+}
+
+#admin_home h3{
+ padding-left: 10px;
+}

@@ -1,0 +1,23 @@
+<%= form_for [:admin, @user] do |f| %>
+  <%= error_messages_for @user %>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, :placeholder => ta(User, :first_name) %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, :placeholder => ta(User, :last_name) %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :placeholder => ta(User, :email) %>
+  </div>
+   <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :placeholder => ta(User, :password) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

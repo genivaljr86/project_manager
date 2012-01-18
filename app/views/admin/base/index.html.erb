@@ -1,8 +1,13 @@
+<div id="admin_home">
+  <%= content_tag :h1 do %>
+    <%= image_tag("projects_icons/usuarios.png",{ :title => "Usuarios" }) %>
+    <%= t('users') %>
+    <%= link_to_icon 'visualizar', admin_users_path %>
+    <%= link_to_icon 'novo', new_admin_user_path %>
+  <% end %>
+  <h3>Atualmente existem <%= @users.count %> usuários cadastrado no sistema</h3>
+</div>
 
-<%= content_tag :h1 do %>
-  <%= image_tag("projects_icons/usuarios.png",{ :title => "Usuarios" }) %>
-  <%= link_to t('users'), admin_users_path %>
-<% end %>
 
 
 
