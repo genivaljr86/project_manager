@@ -1,3 +1,7 @@
+.field {
+  margin: 15px 0;
+}
+
 form  .input-custom {width: 250px;border: 1px solid #cacaca;height: 17px;font: 12px Verdana, Arial, Verdana, sans-serif;}
 
 label{color:#FFF}
@@ -14,23 +18,33 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="button"] {
+  width: 400px;
   border:1px solid #CECFD0;
+  line-height: 20px;
+  font-size: 20px;
   color:#000;
   margin:5px 5px 1px 0;
-  padding:3px;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
+  padding:10px 30px;
+  border-radius:3px 0 0 3px;
+  -moz-border-radius:3px 0 0 3px;
+  -webkit-border-radius:3px 0 0 3px;
+}
+
+input[type="text"]{
+color: #637F0A
+}
+
+input[type="submit"]{
+  line-height: 20px;
+  font-size: 20px;
+  margin:5px 5px 1px 0;
+  padding:15px 35px;
 }
 input[type="submit"],
 textarea  {
-  height: 25px;
   background: #666;
   border: solid black 1px;
   color:#FFF;
-  margin:5px 5px 1px 0;
-  padding:3px;
-  width:20%;
   border-radius:5px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;

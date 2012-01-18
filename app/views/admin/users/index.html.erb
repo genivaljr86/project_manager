@@ -9,6 +9,7 @@
       <div class="task-title"><%= t("tasks_count") %> - <%= user.tasks.count %></div>
       <div class="time" datetime="<%= user.created_at %>">Membro desde: <%= user.member_since %></div>
       <%= link_to_icon 'visualizar', [:admin, user] %>
+      <%= link_to_icon 'editar', edit_admin_user_path(user) %>
     </div>
   <% end %>
 </div>

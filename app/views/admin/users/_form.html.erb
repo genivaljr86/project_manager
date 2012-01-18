@@ -16,6 +16,10 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, :placeholder => ta(User, :password) %>
   </div>
+  <div class="field">
+    <%= f.check_box :admin %>
+    <%= f.label :admin, "Usuário administrador?" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

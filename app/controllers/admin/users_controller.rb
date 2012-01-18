@@ -13,8 +13,13 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new
   end
 
+  def edit
+
+  end
+
   def create
     @user = User.new(params[:user])
+    set_admin
     if @user.save
       flash[:notice] = t("create_sucess")
       redirect_to admin_users_path
@@ -23,9 +28,27 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
+    set_admin
+    if @user.update_attributes(params[:user])
+      flash[:notice] = t("update_sucess")
+      redirect_to admin_users_path
+    else
+      render :action => "edit"
+    end
+  end
+
 
 
   private
+
+  def set_admin
+    @user.admin = params[:user][:admin] == "1"
+  end
+
 
   def find_user
     @user = User.find(params[:id])
