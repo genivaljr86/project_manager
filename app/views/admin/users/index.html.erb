@@ -10,6 +10,7 @@
       <div class="time" datetime="<%= user.created_at %>">Membro desde: <%= user.member_since %></div>
       <%= link_to_icon 'visualizar', [:admin, user] %>
       <%= link_to_icon 'editar', edit_admin_user_path(user) %>
+      <%= link_to_icon "deletar", [:admin, user], :method => :delete, :confirm => t('delete') %>
     </div>
   <% end %>
 </div>
