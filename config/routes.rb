@@ -1,7 +1,4 @@
 ProjectManager::Application.routes.draw do
-
-  devise_for :users
-
   namespace :admin do
     root :to => "base#index"
     resources :users
@@ -12,5 +9,11 @@ ProjectManager::Application.routes.draw do
   end
 
   root to: "projects#index"
+
+  devise_for :users, :controllers => {:registrations => "registrations" }
+
+  get '/awaiting_confirmation',
+    :to => "users#confirmation",
+    :as => 'confirm_user'
 
 end

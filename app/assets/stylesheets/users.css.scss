@@ -1,0 +1,20 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#registration{
+  color: #FFF;
+  font-size: 14px;
+  h1{
+    color: #b5e50d;
+    font-size: 32px;
+    padding-left: 6px;
+  }
+}
+#settings_registration{
+  color: #FFF;
+  .hint_registration{
+    font-style: italic;
+    font-size: 11px;
+  }
+}
