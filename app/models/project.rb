@@ -4,5 +4,6 @@ class Project < ActiveRecord::Base
 
   has_many :tasks, :dependent => :destroy
 
-  validates_presence_of :title
+  validates :title, :presence => true, :uniqueness => true
+
 end
