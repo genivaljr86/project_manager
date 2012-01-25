@@ -1,0 +1,27 @@
+// Place all the styles related to the admin/permissions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#permission{
+  color: #FFF;
+}
+
+table.permission {
+  margin: 0 auto;
+  width: 75%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.permission td, .permission th {
+  padding: 4px 10px;
+  border: solid 1px #AAA;
+  text-align:center;
+}
+.title_permissions{
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align:center;
+
+}
+
+

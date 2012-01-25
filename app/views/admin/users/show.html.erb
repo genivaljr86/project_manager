@@ -19,4 +19,5 @@
     <dt>sign_in_count</dt>
     <dd><%= @user.sign_in_count %></dd>
   </dl>
+  <%= link_to "Permissions", admin_user_permissions_path(@user) %>
 </div>
