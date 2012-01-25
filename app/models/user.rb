@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name
   has_many :tasks
+  has_many :permissions
+
+  def to_s
+    "#{email} (#{admin? ? "Admin" : "User"})"
+  end
 
   before_save :cleanup
 
