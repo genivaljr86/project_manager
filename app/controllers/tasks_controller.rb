@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_filter :find_project
   before_filter :find_task, :only => [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+  before_filter :authorize_create!, :only => [:new, :create]
 
   def show
   end
@@ -39,8 +40,9 @@ class TasksController < ApplicationController
     redirect_to @project
   end
 
-
+#----------------------------------Find and Restricts-------------------------------------------------#
   private
+
   def find_project
     @project = Project.for(current_user).find(params[:project_id])
   rescue ActiveRecord::RecordNotFound
@@ -48,9 +50,15 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-
   def find_task
     @task = @project.tasks.find(params[:id])
+  end
+
+  def authorize_create!
+    if !current_user.admin? && cannot?("create tasks".to_sym, @project)
+      flash[:alert] = "You cannot create tickets on this project."
+      redirect_to @project
+    end
   end
 
 

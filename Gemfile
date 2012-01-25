@@ -8,6 +8,7 @@ gem 'awesome_print'
 gem 'friendly_id', '~> 4.0.0'
 gem 'redcarpet'
 gem 'draper'
+gem 'cancan'
 
 
 group :assets do
