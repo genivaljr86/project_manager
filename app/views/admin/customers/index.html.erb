@@ -1,0 +1,15 @@
+<div class="users">
+  <%= content_tag :h1 do %>
+    <%= image_tag("projects_icons/usuarios.png",{ :title => "Customers" }) %>
+    <%= t('customers') %>
+  <% end %>
+  <% @customers.each do |customer| %>
+    <div class="task <%= cycle('odd', 'even') %>">
+      <div class="person-name"><%= customer.name %></div>
+      <%= link_to_icon 'visualizar', [:admin, customer] %>
+      <%= link_to_icon 'editar', edit_admin_customer_path(customer) %>
+      <%= link_to_icon "deletar", [:admin, customer], :method => :delete, :confirm => t('delete') %>
+    </div>
+  <% end %>
+</div>
+

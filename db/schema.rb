@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125120003) do
+ActiveRecord::Schema.define(:version => 20120126132248) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "email_main"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "user_cpanel"
+    t.string   "password_cpanel"
+    t.string   "email_twitter"
+    t.string   "password_twitter"
+    t.string   "user_facebook"
+    t.string   "password_facebook"
+    t.string   "server"
+    t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120125120003) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "customer_id"
   end
 
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true

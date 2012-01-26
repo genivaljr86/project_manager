@@ -24,6 +24,7 @@
     <%= admins_only do %>
       <%= link_to_icon "editar", edit_project_path(@project) %>
       <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
+      <%= link_to_icon "cliente_perfil", "#", id: "cliente_perfil" %>
     <% end %>
   </h1>
   <% @project.tasks.each do |task| %>
@@ -36,5 +37,41 @@
       <%= link_to_icon 'deletar', [@project, task], :method => :delete, :confirm => t('delete') %>
     </div>
   <% end %>
+
+  <div id="dialog" title="Informações do Projeto">
+    <div id="user_information" class="margin_dialog">
+      <h1>Cliente</h1>
+      <p><%= @project.customer.name %></p>
+      <h1>E-mail Principal</h1>
+      <p><%= @project.customer.email_main %></p>
+      <h1>Telefone</h1>
+      <p><%= @project.customer.phone %></p>
+      <h1>Endereço</h1>
+      <p><%= @project.customer.address %></p>
+    </div>
+    <div id="server_information" class="margin_dialog">
+      <h1>Servidor</h1>
+      <p><%= @project.customer.server %></p>
+      <h1>Usuário do Servidor</h1>
+      <p><%= @project.customer.user_cpanel %></p>
+      <h1>Senha do Servidor</h1>
+      <p><%= @project.customer.password_cpanel %></p>
+      <h1>Linguagem</h1>
+      <p><%= @project.customer.language %></p>
+    </div>
+
+    <div id="redes_information" class="margin_dialog">
+      <h1>E-mail do Twitter</h1>
+      <p><%= @project.customer.email_twitter %></p>
+      <h1>Senha do Twitter</h1>
+      <p><%= @project.customer.password_twitter %></p>
+      <h1>E-mail do Facebook</h1>
+      <p><%= @project.customer.user_facebook %></p>
+      <h1>Senha do Facebook</h1>
+      <p><%= @project.customer.password_facebook %></p>
+    </div>
+
+  </div>
 </div>
+
 

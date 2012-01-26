@@ -1,0 +1,48 @@
+// Place all the styles related to the admin/customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#form_customers{
+  color:#FFF;
+  table {
+    border-collapse: collapse;
+    color: #FFF;
+  }
+
+  th {
+    width: 200px;
+    text-align: right;
+    vertical-align: top;
+    font-family: Verdana;
+    font-size: 0.7em;
+    padding-right: 12px;
+    padding-top: 1.75em;
+    padding-bottom: 0.75em;
+  }
+
+  td {
+    vertical-align: middle;
+    background-color: black;
+    color: white;
+    padding: 4px;
+    font-family: Verdana;
+    font-size: .7em;
+    background-repeat: repeat-x;
+    background-position: 50%;
+  }
+
+  .header th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.0em;
+    padding-left: 220px;
+
+  }
+  #buttonSubmit {
+    margin-left: 220px;
+    margin-top: 20px;
+  }
+  textarea{
+    width: 400px;
+  }
+
+}

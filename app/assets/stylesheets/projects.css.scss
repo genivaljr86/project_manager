@@ -1,3 +1,29 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#table_projects{
+  color:#FFF;
+}
+#user_information{
+  float: left;
+}
+
+#server_information{
+  float: left;
+}
+
+#redes_information{
+  float: left;
+}
+.margin_dialog{
+  margin: 10px;
+  width: 260px;
+  h1 {
+    color: #B5E50D;
+    font-size: 22px;
+  }
+  p{
+    padding-left: 15px;
+  }
+}
+

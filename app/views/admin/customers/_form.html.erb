@@ -1,0 +1,70 @@
+<div id="form_customers">
+  <%= form_for [:admin, @customer] do |f| %>
+    <%= error_messages_for @customer %>
+    <table cellspacing="0">
+      <tr class="header">
+        <th colspan="2">Informações do Cliente</th>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :name %></th>
+        <td><%= f.text_field :name, :placeholder => ta(Customer, :name)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :email_main %></th>
+        <td><%= f.text_field :email_main, :placeholder => ta(Customer, :email_main)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :phone %></th>
+        <td><%= f.text_field :phone, :placeholder => ta(Customer, :phone)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :address %></th>
+        <td><%= f.text_area :address, :rows => "20", :placeholder => ta(Customer, :address)%></td>
+      </tr>
+
+      <tr class="header">
+        <th colspan="2">Informações do Servidor</th>
+      </tr>
+       <tr class="required">
+        <th scope="row"> <%= f.label :server %></th>
+        <td><%= f.text_field :server, :placeholder => ta(Customer, :server)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :language %></th>
+        <td><%= f.text_field :language, :placeholder => ta(Customer, :language)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :user_cpanel %></th>
+        <td><%= f.text_field :user_cpanel, :placeholder => ta(Customer, :user_cpanel)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :password_cpanel %></th>
+        <td><%= f.text_field :password_cpanel, :placeholder => ta(Customer, :password_cpanel)%></td>
+      </tr>
+
+      <tr class="header">
+        <th colspan="2">Informações do Twiiter</th>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :email_twitter %></th>
+        <td><%= f.text_field :email_twitter, :placeholder => ta(Customer, :email_twitter)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :password_twitter %></th>
+        <td><%= f.text_field :password_twitter, :placeholder => ta(Customer, :password_twitter)%></td>
+      </tr>
+       <tr class="header">
+        <th colspan="2">Informações do Facebook</th>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :user_facebook %></th>
+        <td><%= f.text_field :user_facebook, :placeholder => ta(Customer, :user_facebook)%></td>
+      </tr>
+      <tr class="required">
+        <th scope="row"> <%= f.label :password_facebook %></th>
+        <td><%= f.text_field :password_facebook, :placeholder => ta(Customer, :password_facebook)%></td>
+      </tr>
+    </table>
+    <%= f.submit id: "buttonSubmit" %>
+  <% end %>
+</div>

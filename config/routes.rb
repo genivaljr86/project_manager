@@ -4,11 +4,14 @@ ProjectManager::Application.routes.draw do
     resources :users do
       resources :permissions
     end
+    resources :customers
   end
 
   resources :projects do
     resources :tasks
   end
+
+  resources :customers
 
   root to: "projects#index"
 
