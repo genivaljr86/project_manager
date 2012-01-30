@@ -9,7 +9,7 @@ gem 'friendly_id', '~> 4.0.0'
 gem 'redcarpet'
 gem 'draper'
 gem 'cancan'
-
+gem 'paperclip'
 
 
 group :assets do
