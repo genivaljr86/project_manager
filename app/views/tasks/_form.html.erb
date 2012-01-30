@@ -8,9 +8,11 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :rows => "6" %>
   </div>
-  <div class="field">
-    <%= f.label :asset %><br />
-    <%= f.file_field :asset %>
+  <% number = 0 %>
+   <div class="field">
+    <%= f.fields_for :assets, :child_index => number do |asset| %>
+      <p><%= asset.label :asset, "File ##{number += 1}" %> <%= asset.file_field :asset %></p>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
