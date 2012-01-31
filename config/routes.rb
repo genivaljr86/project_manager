@@ -12,7 +12,9 @@ ProjectManager::Application.routes.draw do
   end
 
   resources :customers
-
+  resources :files
+  
+  
   root to: "projects#index"
 
   devise_for :users, :controllers => {:registrations => "registrations" }

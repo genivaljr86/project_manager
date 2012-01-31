@@ -11,7 +11,7 @@ class TasksController < ApplicationController
 
   def new
     @task = @project.tasks.build
-    3.times { @task.assets.build }
+    asset = @task.assets.build
   end
 
   def edit

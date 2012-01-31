@@ -1,4 +1,4 @@
-<%= form_for [@project, @task], :html => { :multipart => true } do |f| %>
+<%= form_for [@project, @task] do |f| %>
   <%= error_messages_for @task %>
   <div class="field">
     <%= f.label :title %><br />
@@ -8,12 +8,18 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :rows => "6" %>
   </div>
+
   <% number = 0 %>
-   <div class="field">
-    <%= f.fields_for :assets, :child_index => number do |asset| %>
-      <p><%= asset.label :asset, "File ##{number += 1}" %> <%= asset.file_field :asset %></p>
-    <% end %>
-  </div>
+    <div id='files'>
+      <%= f.fields_for :assets, :child_index => number do |asset| %>
+        <p>
+          <%= asset.label :asset, "File ##{number += 1}" %>
+          <%= asset.file_field :asset %>
+        </p>
+      <% end %>
+    </div>
+    <%= link_to "Add another file", 'javascript:', :id => "add_another_file" %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
