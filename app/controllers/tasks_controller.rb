@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_filter :find_project
-  before_filter :find_task, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_task, :only => [:show, :edit, :update, :destroy, :watch]
   before_filter :authenticate_user!
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
   before_filter :authorize_delete!, :only => [:destroy]
 
   def show
+    @comment = @task.comments.build
   end
 
   def new
@@ -43,7 +44,21 @@ class TasksController < ApplicationController
     redirect_to @project
   end
 
-#----------------------------------Find and Restricts-------------------------------------------------#
+
+  def watch
+    if @task.watchers.exists?(current_user)
+      @task.watchers -= [current_user]
+      flash[:notice] = "You are no longer watching this ticket."
+    else
+      @task.watchers << current_user
+      flash[:notice] = "You are now watching this ticket."
+    end
+
+    redirect_to project_task_path(@task.project, @task)
+  end
+
+
+  #----------------------------------Find and Restricts-------------------------------------------------#
   private
 
   def find_project

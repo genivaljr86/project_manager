@@ -1,0 +1,12 @@
+<div id="comment_form">
+  <%= form_for [@task, @comment] do |f| %>
+    <%= error_messages_for @comment %>
+    <div class="field">
+      <%= f.label :text %><br />
+      <%= f.text_area :text, :rows => "6" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

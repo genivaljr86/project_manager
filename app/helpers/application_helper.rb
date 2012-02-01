@@ -9,6 +9,12 @@ module ApplicationHelper
     end
   end
 
+  def gravatar_image_tag(email, html_options = {})
+    return unless email
+    email = Digest::MD5.hexdigest(email)
+    image_tag "http://www.gravatar.com/avatar/#{email}?size=32", html_options
+  end
+
   def link_to_icon(icon_name, url_or_object, options={})
     options.merge!({ :class => "icon #{icon_name}", :id => "#{icon_name}" })
     link_to(image_tag("projects_icons/#{icon_name}.png",{ :title => icon_name }), url_or_object,options)

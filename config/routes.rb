@@ -8,13 +8,22 @@ ProjectManager::Application.routes.draw do
   end
 
   resources :projects do
-    resources :tasks
+    resources :tasks do
+      member do
+        post :watch
+      end
+    end
   end
+
+  resources :tasks do
+    resources :comments
+  end
+
 
   resources :customers
   resources :files
-  
-  
+
+
   root to: "projects#index"
 
   devise_for :users, :controllers => {:registrations => "registrations" }

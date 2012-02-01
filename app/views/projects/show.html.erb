@@ -9,8 +9,8 @@
       :placeholder => "Procurar",
       :size => 30,
       :type => "search",
-      :class => "search-field" %>
-    <%= image_tag("projects_icons/procurar.png", class: "search_icon") %>
+      :class => "search-field",
+      :results => "5"%>
   <% end %>
   <p class="addlink">
     <%= authorized?("create tasks".to_sym, @project) do %>

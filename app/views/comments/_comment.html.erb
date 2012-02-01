@@ -1,0 +1,12 @@
+<%= div_for comment, :class => "comment" do %>
+  <div class="author">
+    <!--<div class="avatar"></div> -->
+    <div class="meta">
+      <span class="name"><%= comment.user.name %></span><br/>
+      <span class="date">Posted <%= time_ago_in_words comment.created_at %> ago</span>
+    </div>
+  </div>
+  <div class="body" style="margin-bottom:20px;">
+    <%= simple_format(comment.text) %>
+  </div>
+<% end %>

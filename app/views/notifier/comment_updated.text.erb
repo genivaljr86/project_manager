@@ -1,0 +1,10 @@
+== ADD YOUR REPLY ABOVE THIS LINE ==
+
+Hello!
+
+<%= @comment.user.name %> has just updated the <%= @comment.task.title %> ticket for <%= @comment.task.project.title %>. They wrote:
+
+<%= @comment.text %>
+
+You can view this ticket online by going to:
+<%= project_task_url(@comment.task.project, @comment.task) %>

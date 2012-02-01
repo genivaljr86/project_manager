@@ -18,5 +18,11 @@ jQuery ->
   $('#cliente_perfil').click ->
     $('#dialog').dialog( "open" )
     return false
+  $( "#accordion" ).accordion({
+    active: 2,
+    collapsible: true,
+    autoHeight: false,
+    navigation: true
+  })
 
 

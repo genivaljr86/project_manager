@@ -1,8 +1,9 @@
 <% content_for :breadcrumb do %>
   <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
-   <li><%= link_to @project.title, @project %> <span class="divider">/</span></li>
+  <li><%= link_to @project.title, @project %> <span class="divider">/</span></li>
   <li class="active"><%= @task.title %></li>
 <% end %>
+
 <div class="task">
   <h2>
     <%= @task.title %>
@@ -13,6 +14,7 @@
       <%= link_to_icon "editar", [:edit, @project, @task] %>
     <% end %>
   </h2>
+
   <div class="description">
     <%= simple_format(@task.description) %>
     <div class="user-name">
@@ -20,20 +22,48 @@
     </div>
 
     <% if @task.assets.exists? %>
-    <h3>Attached Files</h3>
-    <div class="assets">
-      <% @task.assets.each do |asset| %>
-      <p>
-        <%= link_to File.basename(asset.asset_file_name), asset.asset.url %>
-        <%= link_to "Download", asset.asset.url(:original, false) %>
-        
-      </p>
-      <p>
-        <small><%= number_to_human_size(asset.asset.size) %></small>
-      </p>
+      <%= content_tag :h3 do %>
+        <%= image_tag("projects_icons/arquivos_anexos.png",{ :title => "Arquivos anexados" }) %>
+        <%= t('attached_files') %>
       <% end %>
+
+      <div class="assets">
+        <table class="assets_table">
+          <thead>
+            <th>Arquivo</th>
+            <th>Tamanho</th>
+            <th>Download</th>
+          </thead>
+          <% @task.assets.each do |asset| %>
+            <tbody>
+              <tr class='<%= cycle("odd", "even") %>'>
+                <td><%= File.basename(asset.asset_file_name) %></td>
+                <td><small><%= number_to_human_size(asset.asset.size) %></small></td>
+                <td><%= link_to_icon "download", asset.asset.url %></td>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
+
+      <div id='watchers'>
+        <%= toggle_watching_button %>
+        <h4>Watchers</h4>
+        <ul>
+          <% @task.watchers.each do |watcher| %>
+            <li><%= watcher %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <h3>Comments</h3>
+      <div id='comments'>
+        <% if @task.comments.any? %> <co id='ch10_191_1' />
+          <%= render @task.comments.select(&:persisted?) %>
+        <% else %>
+          There are no comments for this ticket.
+        <% end %>
+      </div>
     </div>
-    <% end %>
   </div>
-    
-</div>
+  <%= render "comments/form" %>
