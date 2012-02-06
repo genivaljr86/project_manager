@@ -7,8 +7,13 @@ ProjectManager::Application.routes.draw do
     resources :customers
   end
 
-  resources :projects do
-    resources :tasks do
+  get 'projects/pagina/:page', to: 'projects#index'
+  resources :projects, :path => "projetos" do
+    resources :tasks, :path => "chamados" do
+      collection do
+        get :search
+      end
+
       member do
         post :watch
       end

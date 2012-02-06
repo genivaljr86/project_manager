@@ -1,0 +1,63 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      asset:
+        one: Arquivo
+        other: Arquivos
+      comment:
+        one: Cometário
+        other: Comentários
+      customer:
+        one: Cliente
+        other: Clientes
+      permission:
+        one: Permissão
+        other: Permissões
+      project:
+        one: Projeto
+        other: Projetos
+      task:
+        one: Chamado
+        other: Chamados
+
+#-------------------------------------------------------------------------------------------------------------------
+    attributes:
+        asset:
+          task_id: "Chamado"
+
+        comment:
+          text: "Conteúdo"
+
+        customer:
+          name: "Nome"
+          email_main: "Email Principal"
+          phone: "Telefone"
+          address: "Endereço"
+          user_cpanel: "Usuário Cpanel"
+          password_cpanel: "Senha do Cpanel"
+          email_twitter: "Email do Twitter"
+          password_twitter: "Senha do Twitter"
+          user_facebook: "Usuário Facebook"
+          password_facebook: "Senha do Facebook"
+          server: "Servidor"
+          language: "Linguagem"
+
+        project:
+          title: "Título"
+          customer_id: "Cliente"
+
+        task:
+          title: "Título"
+          description: "Descrição"
+
+        user:
+          email: "Email"
+          first_name: "Primeiro Nome"
+          last_name: "Sobrenome"
+          password: "Senha"
+          password_confirmation: "Confirmação de Senha"
+          current_password: "Senha Atual"
+

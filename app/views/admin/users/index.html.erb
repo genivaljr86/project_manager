@@ -1,7 +1,15 @@
+<% title "Usuários" %>
+
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", admin_root_path %> <span class="divider">/</span></li>
+  <li class="active">Usuários</li>
+<% end %>
+
 <div class="users">
   <%= content_tag :h1 do %>
     <%= image_tag("projects_icons/usuarios.png",{ :title => "Usuarios" }) %>
     <%= t('users') %>
+    <%= link_to_icon 'novo', new_admin_user_path %>
   <% end %>
   <% @users.each do |user| %>
     <div class="task <%= cycle('odd', 'even') %>">
@@ -13,4 +21,5 @@
       <%= link_to_icon "deletar", [:admin, user], :method => :delete, :confirm => t('delete') %>
     </div>
   <% end %>
+
 </div>

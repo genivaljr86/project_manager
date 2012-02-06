@@ -5,7 +5,7 @@
     <%= f.text_field :title, size: 60 %>
   </div>
   <div class="field">
-    <%= f.label :customer_name %><br />
+    <%= f.label :customer_name, "Cliente" %><br />
     <%= f.text_field :customer_name, data: {autocomplete_source: customers_path}  %>
   </div>
   <div class="actions">

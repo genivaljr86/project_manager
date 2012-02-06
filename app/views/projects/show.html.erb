@@ -3,40 +3,20 @@
   <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
   <li class="active"><%= @project.title %></li>
 <% end %>
-<div class="search">
-  <%= form_tag projects_path, :method => :get do %>
-    <%= text_field_tag :search, "",
-      :placeholder => "Procurar",
-      :size => 30,
-      :type => "search",
-      :class => "search-field",
-      :results => "5"%>
-  <% end %>
-  <p class="addlink">
-    <%= authorized?("create tasks".to_sym, @project) do %>
-      <%= link_to "Nova Tarefa", new_project_task_path(@project) %>
-    <% end %>
-  </p>
-</div>
+
 <div class="project">
   <h1>
     <%= @project.title %>
     <%= admins_only do %>
       <%= link_to_icon "editar", edit_project_path(@project) %>
       <%= link_to_icon "deletar", @project, :method => :delete, :confirm => t('delete') %>
-      <%= link_to_icon "cliente_perfil", "#", id: "cliente_perfil" %>
     <% end %>
+    <%= link_to_icon "cliente_perfil", "#", id: "cliente_perfil" %>
+    <%= link_to_icon "novo", new_project_task_path(@project) %>
   </h1>
-  <% @project.tasks.each do |task| %>
-    <div class="task <%= dom_class_first(task, task.project.tasks) %> <%= cycle('odd', 'even') %>">
-      <div class="person-name"><%= task.user.name %></div>
-      <div class="task-title">#<%= task.id %> - <%= task.title %></div>
-      <div class="time" datetime="<%= task.updated_at %>"><%= task.updated_at.to_formatted_s(:short) %></div>
-      <%= link_to_icon 'visualizar', [@project, task] %>
-      <%= link_to_icon 'editar', [:edit, @project, task] %>
-      <%= link_to_icon 'deletar', [@project, task], :method => :delete, :confirm => t('delete') %>
-    </div>
-  <% end %>
+
+  <h2 id="heading">Listagem de Tarefas</h2>
+  <%= render @project.tasks.order("created_at DESC" ) %>
 
   <div id="dialog" title="Informações do Projeto">
     <div id="user_information" class="margin_dialog">

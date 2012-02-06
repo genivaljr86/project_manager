@@ -1,3 +1,9 @@
+<% title "Administração" %>
+
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", admin_root_path %></li>
+<% end %>
+
 <div id="admin_home">
   <%= content_tag :h1 do %>
     <%= image_tag("projects_icons/usuarios.png",{ :title => "Usuarios" }) %>
@@ -5,7 +11,8 @@
     <%= link_to_icon 'visualizar', admin_users_path %>
   <% end %>
 
-  <h3>Atualmente existem <%= @users.count %> usuários cadastrado no sistema | <%= link_to 'Novo Usuário', new_admin_user_path %></h3>
+
+  <h3><%= pluralize(@users.count, 'usuários') %> cadastrados | <%= link_to 'Novo Usuário', new_admin_user_path %></h3>
 </div>
 
 

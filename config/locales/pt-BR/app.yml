@@ -1,0 +1,16 @@
+pt-BR:
+  error_message_header: "%{count} erro(s) impediram este(a) %{model} de ser gravado:"
+  delete: "Você tem certeza que deseja deletar esse registro"
+  project_not_found: "O projeto que você procura não pode ser encontrado"
+  users: "Usuários"
+  tasks_count: "Números de Tarefas"
+  create_sucess: "Registro cadastrado com sucesso"
+  update_sucess: "Registro alterado com sucesso"
+  destroy_sucess: "Registro deletado com sucesso"
+  error_message: "O registro não pode ser criado"
+  observer_task: "Você irá receber emails desse chamado"
+  no_observer_task: "Você não irá receber emails desse chamado"
+
+  projects:
+    index:
+      title: "Home"

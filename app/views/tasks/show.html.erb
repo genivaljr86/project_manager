@@ -16,10 +16,13 @@
   </h2>
 
   <div class="description">
-    <%= simple_format(@task.description) %>
-    <div class="user-name">
+    <div id="description-task">
+      <%= simple_format(@task.description) %>
+    </div>
+    <div class="create-user-name">
       <small>Criado pelo usuário <%= @task.user.name %></small>
     </div>
+
 
     <% if @task.assets.exists? %>
       <%= content_tag :h3 do %>
@@ -48,7 +51,7 @@
 
       <div id='watchers'>
         <%= toggle_watching_button %>
-        <h4>Watchers</h4>
+        <h4>Usuários que receberam emails desse chamado</h4>
         <ul>
           <% @task.watchers.each do |watcher| %>
             <li><%= watcher %></li>
@@ -56,7 +59,7 @@
         </ul>
       </div>
 
-      <h3>Comments</h3>
+      <h3>Comentários</h3>
       <div id='comments'>
         <% if @task.comments.any? %> <co id='ch10_191_1' />
           <%= render @task.comments.select(&:persisted?) %>

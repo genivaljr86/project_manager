@@ -1,4 +1,10 @@
-<h2>Edit User</h2>
+<% title "Editar Usuário" %>
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", admin_root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Usuários", admin_users_path %> <span class="divider">/</span></li>
+  <li><%= link_to @user.name, admin_user_path(@user)  %> <span class="divider">/</span></li>
+  <li class="active">Editar</li>
+<% end %>
 <%= render "form" %>
 
 

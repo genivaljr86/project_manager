@@ -1,3 +1,10 @@
+<% title @user.name %>
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", admin_root_path %> <span class="divider">/</span></li>
+  <li><%= link_to "Usuários", admin_users_path %> <span class="divider">/</span></li>
+  <li class="active"><%= @user.name %></li>
+<% end %>
+
 <div id="profile">
   <%= image_tag avatar_url(@user, 100, "big"), class: "avatar" %>
   <h1><%= @user.name %></h1>

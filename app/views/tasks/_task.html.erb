@@ -1,0 +1,21 @@
+<div class="task <%= dom_class_first(task, task.project.tasks) %> <%= cycle('odd', 'even') %>">
+
+  <div class="person-name">
+    <%= task.title %>
+    <span class="comments">
+      (<%= pluralize(task.comments.count, 'comentário') %>)
+    </span>
+  </div>
+
+  <div class="task-title">
+    Author: <%= task.user.name %>
+  </div>
+
+  <div class="time" datetime="<%= task.updated_at %>">
+    Criado em: <%= task.updated_at.to_formatted_s(:short) %>
+  </div>
+
+  <%= link_to_icon 'visualizar', [@project, task] %>
+  <%= link_to_icon 'editar', [:edit, @project, task] %>
+  <%= link_to_icon 'deletar', [@project, task], :method => :delete, :confirm => t('delete') %>
+</div>

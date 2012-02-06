@@ -10,6 +10,9 @@ gem 'redcarpet'
 gem 'draper'
 gem 'cancan'
 gem 'paperclip'
+gem 'will_paginate', '~> 3.0'
+gem 'searcher', '~> 0.0.6'
+
 
 
 group :assets do

@@ -48,14 +48,15 @@ class TasksController < ApplicationController
   def watch
     if @task.watchers.exists?(current_user)
       @task.watchers -= [current_user]
-      flash[:notice] = "You are no longer watching this ticket."
+      flash[:notice] = t("observer_task")
     else
       @task.watchers << current_user
-      flash[:notice] = "You are now watching this ticket."
+      flash[:notice] = t("no_observer_task")
     end
 
     redirect_to project_task_path(@task.project, @task)
   end
+
 
 
   #----------------------------------Find and Restricts-------------------------------------------------#

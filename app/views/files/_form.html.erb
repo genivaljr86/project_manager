@@ -1,7 +1,7 @@
 <%= fields_for @task do |f| %>
   <%= f.fields_for :assets, :child_index => number do |asset| %>
     <p>
-      <%= asset.label :asset, "File ##{number += 1}" %>
+      <%= asset.label :asset, "Arquivo ##{number += 1}" %>
       <%= asset.file_field :asset %>
     </p>
   <% end %>

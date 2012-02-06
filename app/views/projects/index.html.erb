@@ -1,10 +1,28 @@
 <% title t('.title') %>
+
 <% content_for :breadcrumb do %>
-  <li class="active">Home</li>
+  <li><%= link_to "Home", root_path %> <span class="divider">/</span></li>
+  <li class="active">Listagem de Projetos</li>
 <% end %>
-<%= render @projects %>
+
+<div class="search">
+  <%= form_tag projects_path, :method => :get do %>
+    <%= text_field_tag :search, "", :placeholder => "Procurar",
+      :size => 30,
+      :type => "search",
+      :class => "search-field",
+      :results => "5"%>
+  <% end %>
+</div>
+
 <%= admins_only do %>
   <%= link_to "Novo Projeto", new_project_path %>
 <% end %>
+
+<%= render @projects %>
+
+<div class="digg_pagination">
+  <%= will_paginate :previous_label => h("< Voltar Página"),  :next_label => h("Próxima Página >") %>
+</div>
 
 

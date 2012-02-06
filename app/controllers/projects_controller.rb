@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
 
   def index
-    @projects = Project.for(current_user).all
+    @projects = Project.for(current_user).search(params[:search]).paginate(:page => params[:page])
   end
 
   def show

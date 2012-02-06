@@ -5,11 +5,10 @@ class CommentsController < ApplicationController
   def create
      @comment = @task.comments.build(params[:comment].merge(:user => current_user))
      if @comment.save
-       flash[:notice] = "Comment has been created."
+       flash[:notice] = t("create_sucess")
        redirect_to [@task.project, @task]
      else
-       @states = State.all
-       flash[:alert] = "Comment has not been created."
+       flash[:error] = t("error_message")
        redirect_to [@task.project, @task]
      end
   end

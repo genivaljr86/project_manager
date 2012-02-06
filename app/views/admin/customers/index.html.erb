@@ -2,6 +2,7 @@
   <%= content_tag :h1 do %>
     <%= image_tag("projects_icons/usuarios.png",{ :title => "Customers" }) %>
     <%= t('customers') %>
+    <%= link_to_icon 'novo', new_admin_customer_path %>
   <% end %>
   <% @customers.each do |customer| %>
     <div class="task <%= cycle('odd', 'even') %>">

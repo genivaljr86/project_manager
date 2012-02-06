@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   validates :title, :presence => true, :uniqueness => true
 
 
+
   scope :readable_by, lambda { |user|
     joins(:permissions).where(:permissions => { :action => "view",
                                                 :user_id => user.id })
@@ -26,5 +27,12 @@ class Project < ActiveRecord::Base
     self.customer = Customer.find_or_create_by_name(name) if name.present?
   end
 
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 
 end

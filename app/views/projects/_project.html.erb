@@ -1,10 +1,13 @@
 <h1>
   <%= project.title %>
-    <%= link_to_icon "visualizar", project %>
+  <%= link_to_icon "visualizar", project %>
   <%= admins_only do %>
     <%= link_to_icon "editar", edit_project_path(project) %>
     <%= link_to_icon "deletar", project, :method => :delete, :confirm => t('delete') %>
   <% end %>
+  <span class="tasks_count">
+    (<%= pluralize(project.tasks.count, 'chamado') %>)
+  </span>
 </h1>
 
 
