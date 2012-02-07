@@ -14,6 +14,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'searcher', '~> 0.0.6'
 gem 'execjs'
 gem 'therubyracer'
+gem 'mysql2'
 
 
 

@@ -1,13 +1,15 @@
 # which rake
-set :rake,  "/usr/local/rvm/gems/ruby-1.9.2-p290/bin/rake"
+#set :rake,  "/usr/local/rvm/gems/ruby-1.9.2-p290/bin/rake"
 # # RVM bootstrap
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require 'rvm/capistrano'
-set :rvm_ruby_string, '1.9.2-p290'
-set :rvm_type, :system
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
+#require 'rvm/capistrano'
+#set :rvm_ruby_string, '1.9.2'
+#set :rvm_type, :system
 
 # # bundler bootstrap
-require 'bundler/capistrano'
+#require 'bundler/capistrano'
+
 
 # APP SETTINGS
 set :application, "project_manager"
@@ -86,7 +88,7 @@ namespace :assets do
 
   desc "assets_precompile"
   task :assets do
-    run "cd #{current_path}; RAILS_ENV=production rake assets:precompile"
+    #run "cd #{current_path}; RAILS_ENV=production rake assets:precompile"
   end
 end
 
