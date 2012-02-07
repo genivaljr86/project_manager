@@ -1,5 +1,5 @@
 class Admin::CustomersController < Admin::BaseController
-  before_filter :find_customer, :only => [:edit, :update, :destroy]
+  before_filter :find_customer, :only => [:edit, :update, :destroy, :show]
   def index
     @customers = Customer.all(:order => "created_at")
   end
