@@ -4,7 +4,7 @@ set :rake,  "/usr/local/rvm/gems/ruby-1.9.2-p290/bin/rake"
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 set :rvm_ruby_string, '1.9.2-p290'
-set :rvm_type, :user
+set :rvm_type, :system
 
 # # bundler bootstrap
 require 'bundler/capistrano'
